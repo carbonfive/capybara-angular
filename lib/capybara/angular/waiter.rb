@@ -48,6 +48,7 @@ module Capybara
 
       def setup_ready
         page.execute_script <<-JS
+          if (typeof angular === 'undefined') return;
           var el = document.querySelector('[ng-app], [data-ng-app]');
           window.angularReady = false;
 
